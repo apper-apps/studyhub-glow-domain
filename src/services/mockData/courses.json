@@ -1,0 +1,101 @@
+[
+  {
+    "Id": 1,
+    "name": "Data Structures and Algorithms",
+    "professor": "Dr. Sarah Chen",
+    "credits": 4,
+    "color": "#4F46E5",
+    "schedule": [
+      { "day": "MWF", "time": "10:00 AM - 11:00 AM" }
+    ],
+    "semester": "Fall 2024",
+    "gradeCategories": [
+      { "name": "Exams", "weight": 40 },
+      { "name": "Projects", "weight": 35 },
+      { "name": "Assignments", "weight": 20 },
+      { "name": "Participation", "weight": 5 }
+    ]
+  },
+  {
+    "Id": 2,
+    "name": "Database Systems",
+    "professor": "Prof. Michael Rodriguez",
+    "credits": 3,
+    "color": "#7C3AED",
+    "schedule": [
+      { "day": "TTh", "time": "2:00 PM - 3:30 PM" }
+    ],
+    "semester": "Fall 2024",
+    "gradeCategories": [
+      { "name": "Midterm", "weight": 25 },
+      { "name": "Final", "weight": 30 },
+      { "name": "Labs", "weight": 30 },
+      { "name": "Homework", "weight": 15 }
+    ]
+  },
+  {
+    "Id": 3,
+    "name": "Software Engineering",
+    "professor": "Dr. Emily Johnson",
+    "credits": 3,
+    "color": "#059669",
+    "schedule": [
+      { "day": "MW", "time": "1:00 PM - 2:30 PM" }
+    ],
+    "semester": "Fall 2024",
+    "gradeCategories": [
+      { "name": "Group Project", "weight": 40 },
+      { "name": "Individual Project", "weight": 30 },
+      { "name": "Quizzes", "weight": 20 },
+      { "name": "Participation", "weight": 10 }
+    ]
+  },
+  {
+    "Id": 4,
+    "name": "Computer Networks",
+    "professor": "Prof. David Kim",
+    "credits": 3,
+    "color": "#DC2626",
+    "schedule": [
+      { "day": "TTh", "time": "11:00 AM - 12:30 PM" }
+    ],
+    "semester": "Fall 2024",
+    "gradeCategories": [
+      { "name": "Exams", "weight": 50 },
+      { "name": "Labs", "weight": 30 },
+      { "name": "Homework", "weight": 20 }
+    ]
+  },
+  {
+    "Id": 5,
+    "name": "Machine Learning",
+    "professor": "Dr. Lisa Park",
+    "credits": 4,
+    "color": "#F59E0B",
+    "schedule": [
+      { "day": "MWF", "time": "3:00 PM - 4:00 PM" }
+    ],
+    "semester": "Fall 2024",
+    "gradeCategories": [
+      { "name": "Projects", "weight": 50 },
+      { "name": "Exams", "weight": 30 },
+      { "name": "Assignments", "weight": 20 }
+    ]
+  },
+  {
+    "Id": 6,
+    "name": "Calculus III",
+    "professor": "Prof. Robert Smith",
+    "credits": 4,
+    "color": "#8B5CF6",
+    "schedule": [
+      { "day": "MWF", "time": "9:00 AM - 10:00 AM" }
+    ],
+    "semester": "Fall 2024",
+    "gradeCategories": [
+      { "name": "Exams", "weight": 60 },
+      { "name": "Homework", "weight": 30 },
+      { "name": "Quizzes", "weight": 10 }
+    ]
+  }
+]

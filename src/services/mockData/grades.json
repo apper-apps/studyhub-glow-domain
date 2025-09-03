@@ -1,0 +1,71 @@
+[
+  {
+    "courseId": 1,
+    "currentGrade": 89.5,
+    "letterGrade": "B+",
+    "categories": [
+      { "name": "Exams", "weight": 40, "grade": 87.0 },
+      { "name": "Projects", "weight": 35, "grade": 92.5 },
+      { "name": "Assignments", "weight": 20, "grade": 89.0 },
+      { "name": "Participation", "weight": 5, "grade": 95.0 }
+    ],
+    "assignments": [1, 2, 13]
+  },
+  {
+    "courseId": 2,
+    "currentGrade": 91.2,
+    "letterGrade": "A-",
+    "categories": [
+      { "name": "Midterm", "weight": 25, "grade": 88.0 },
+      { "name": "Final", "weight": 30, "grade": 93.0 },
+      { "name": "Labs", "weight": 30, "grade": 92.0 },
+      { "name": "Homework", "weight": 15, "grade": 92.0 }
+    ],
+    "assignments": [3, 4]
+  },
+  {
+    "courseId": 3,
+    "currentGrade": 85.8,
+    "letterGrade": "B",
+    "categories": [
+      { "name": "Group Project", "weight": 40, "grade": 88.0 },
+      { "name": "Individual Project", "weight": 30, "grade": 85.0 },
+      { "name": "Quizzes", "weight": 20, "grade": 83.0 },
+      { "name": "Participation", "weight": 10, "grade": 90.0 }
+    ],
+    "assignments": [5, 6, 14]
+  },
+  {
+    "courseId": 4,
+    "currentGrade": 92.7,
+    "letterGrade": "A-",
+    "categories": [
+      { "name": "Exams", "weight": 50, "grade": 95.0 },
+      { "name": "Labs", "weight": 30, "grade": 90.0 },
+      { "name": "Homework", "weight": 20, "grade": 91.0 }
+    ],
+    "assignments": [7, 8]
+  },
+  {
+    "courseId": 5,
+    "currentGrade": 88.9,
+    "letterGrade": "B+",
+    "categories": [
+      { "name": "Projects", "weight": 50, "grade": 89.0 },
+      { "name": "Exams", "weight": 30, "grade": 87.0 },
+      { "name": "Assignments", "weight": 20, "grade": 90.0 }
+    ],
+    "assignments": [9, 10, 15]
+  },
+  {
+    "courseId": 6,
+    "currentGrade": 78.4,
+    "letterGrade": "C+",
+    "categories": [
+      { "name": "Exams", "weight": 60, "grade": 76.0 },
+      { "name": "Homework", "weight": 30, "grade": 82.0 },
+      { "name": "Quizzes", "weight": 10, "grade": 85.0 }
+    ],
+    "assignments": [11, 12]
+  }
+]

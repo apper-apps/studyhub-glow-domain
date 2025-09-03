@@ -1,0 +1,167 @@
+[
+  {
+    "Id": 1,
+    "courseId": 1,
+    "title": "Binary Search Tree Implementation",
+    "description": "Implement a complete binary search tree with insertion, deletion, and traversal methods",
+    "dueDate": "2024-12-15",
+    "priority": "high",
+    "status": "pending",
+    "grade": null,
+    "category": "Projects"
+  },
+  {
+    "Id": 2,
+    "courseId": 1,
+    "title": "Algorithm Analysis Essay",
+    "description": "Write a 5-page analysis comparing sorting algorithms",
+    "dueDate": "2024-12-20",
+    "priority": "medium",
+    "status": "pending",
+    "grade": null,
+    "category": "Assignments"
+  },
+  {
+    "Id": 3,
+    "courseId": 2,
+    "title": "Database Design Project",
+    "description": "Design and implement a relational database for a library management system",
+    "dueDate": "2024-12-18",
+    "priority": "high",
+    "status": "pending",
+    "grade": null,
+    "category": "Labs"
+  },
+  {
+    "Id": 4,
+    "courseId": 2,
+    "title": "SQL Query Homework",
+    "description": "Complete exercises 1-15 on advanced SQL queries",
+    "dueDate": "2024-12-12",
+    "priority": "medium",
+    "status": "completed",
+    "grade": 92,
+    "category": "Homework"
+  },
+  {
+    "Id": 5,
+    "courseId": 3,
+    "title": "Team Project Proposal",
+    "description": "Submit initial proposal for group software project",
+    "dueDate": "2024-12-14",
+    "priority": "high",
+    "status": "completed",
+    "grade": 88,
+    "category": "Group Project"
+  },
+  {
+    "Id": 6,
+    "courseId": 3,
+    "title": "Unit Testing Assignment",
+    "description": "Write comprehensive unit tests for the provided codebase",
+    "dueDate": "2024-12-16",
+    "priority": "medium",
+    "status": "pending",
+    "grade": null,
+    "category": "Individual Project"
+  },
+  {
+    "Id": 7,
+    "courseId": 4,
+    "title": "Network Protocol Analysis",
+    "description": "Analyze TCP/IP packet captures using Wireshark",
+    "dueDate": "2024-12-22",
+    "priority": "medium",
+    "status": "pending",
+    "grade": null,
+    "category": "Labs"
+  },
+  {
+    "Id": 8,
+    "courseId": 4,
+    "title": "OSI Model Quiz",
+    "description": "Online quiz covering the 7 layers of the OSI model",
+    "dueDate": "2024-12-10",
+    "priority": "low",
+    "status": "completed",
+    "grade": 95,
+    "category": "Exams"
+  },
+  {
+    "Id": 9,
+    "courseId": 5,
+    "title": "Linear Regression Project",
+    "description": "Implement linear regression from scratch using Python",
+    "dueDate": "2024-12-25",
+    "priority": "high",
+    "status": "pending",
+    "grade": null,
+    "category": "Projects"
+  },
+  {
+    "Id": 10,
+    "courseId": 5,
+    "title": "Data Preprocessing Assignment",
+    "description": "Clean and preprocess the provided dataset for analysis",
+    "dueDate": "2024-12-13",
+    "priority": "medium",
+    "status": "completed",
+    "grade": 90,
+    "category": "Assignments"
+  },
+  {
+    "Id": 11,
+    "courseId": 6,
+    "title": "Triple Integration Problems",
+    "description": "Solve problems 1-25 from Chapter 15",
+    "dueDate": "2024-12-17",
+    "priority": "medium",
+    "status": "pending",
+    "grade": null,
+    "category": "Homework"
+  },
+  {
+    "Id": 12,
+    "courseId": 6,
+    "title": "Midterm Exam",
+    "description": "Comprehensive exam covering chapters 12-14",
+    "dueDate": "2024-12-19",
+    "priority": "high",
+    "status": "pending",
+    "grade": null,
+    "category": "Exams"
+  },
+  {
+    "Id": 13,
+    "courseId": 1,
+    "title": "Heap Sort Implementation",
+    "description": "Code a heap sort algorithm with complexity analysis",
+    "dueDate": "2024-12-11",
+    "priority": "medium",
+    "status": "completed",
+    "grade": 87,
+    "category": "Assignments"
+  },
+  {
+    "Id": 14,
+    "courseId": 3,
+    "title": "Code Review Assignment",
+    "description": "Review and provide feedback on teammate's code",
+    "dueDate": "2024-12-21",
+    "priority": "low",
+    "status": "pending",
+    "grade": null,
+    "category": "Group Project"
+  },
+  {
+    "Id": 15,
+    "courseId": 5,
+    "title": "Neural Network Paper Review",
+    "description": "Write a critical review of a recent neural network research paper",
+    "dueDate": "2024-12-23",
+    "priority": "medium",
+    "status": "pending",
+    "grade": null,
+    "category": "Assignments"
+  }
+]
