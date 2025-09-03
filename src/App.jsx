@@ -28,9 +28,9 @@ function AppContent() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isInitialized, setIsInitialized] = useState(false);
-  const [isQuickAddOpen, setIsQuickAddOpen] = useState(false);
+const [isQuickAddOpen, setIsQuickAddOpen] = useState(false);
+  const [quickAddType, setQuickAddType] = useState("assignment");
   const [courses, setCourses] = useState([]);
-  
   // Get authentication status with proper error handling
   const userState = useSelector((state) => state.user);
   const isAuthenticated = userState?.isAuthenticated || false;
@@ -115,8 +115,15 @@ function AppContent() {
     }
   };
 
-  const handleQuickAdd = () => {
+const handleQuickAdd = () => {
     loadCourses();
+    setQuickAddType("assignment");
+    setIsQuickAddOpen(true);
+  };
+
+  const handleAddCourse = () => {
+    loadCourses();
+    setQuickAddType("course");
     setIsQuickAddOpen(true);
   };
 
@@ -135,11 +142,20 @@ function AppContent() {
     }
   };
   
-  const handleAddAssignment = async (assignmentData) => {
+const handleAddAssignment = async (assignmentData) => {
     try {
       await assignmentsService.create(assignmentData);
     } catch (error) {
       throw new Error("Failed to add assignment");
+    }
+  };
+
+  const handleAddCourseSubmit = async (courseData) => {
+    try {
+      await coursesService.create(courseData);
+      loadCourses(); // Refresh courses list
+    } catch (error) {
+      throw new Error("Failed to add course");
     }
   };
   
@@ -158,9 +174,9 @@ function AppContent() {
           <Route path="/error" element={<ErrorPage />} />
           <Route path="/prompt-password/:appId/:emailAddress/:provider" element={<PromptPassword />} />
           <Route path="/reset-password/:appId/:fields" element={<ResetPassword />} />
-          <Route path="/" element={<Layout onQuickAdd={handleQuickAdd} />}>
+<Route path="/" element={<Layout onQuickAdd={handleQuickAdd} onAddCourse={handleAddCourse} />}>
             <Route index element={<Dashboard onQuickAdd={handleQuickAdd} />} />
-            <Route path="courses" element={<Courses />} />
+            <Route path="courses" element={<Courses onAddCourse={handleAddCourse} />} />
             <Route path="assignments" element={<Assignments onQuickAdd={handleQuickAdd} />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="grades" element={<Grades />} />
@@ -168,12 +184,12 @@ function AppContent() {
         </Routes>
 
         {/* Quick Add Modal */}
-        <QuickAddModal
+<QuickAddModal
           isOpen={isQuickAddOpen}
           onClose={() => setIsQuickAddOpen(false)}
           courses={courses}
-          onAdd={handleAddAssignment}
-          type="assignment"
+          onAdd={quickAddType === "assignment" ? handleAddAssignment : handleAddCourseSubmit}
+          type={quickAddType}
         />
         
         {/* Toast Container */}

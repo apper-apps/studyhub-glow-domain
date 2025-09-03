@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
-import ApperIcon from "@/components/ApperIcon";
-import Button from "@/components/atoms/Button";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
-import Empty from "@/components/ui/Empty";
-import CourseCard from "@/components/organisms/CourseCard";
-import SearchBar from "@/components/molecules/SearchBar";
+import React, { useEffect, useState } from "react";
 import { coursesService } from "@/services/api/coursesService";
 import { assignmentsService } from "@/services/api/assignmentsService";
 import { gradesService } from "@/services/api/gradesService";
+import ApperIcon from "@/components/ApperIcon";
+import CourseCard from "@/components/organisms/CourseCard";
+import SearchBar from "@/components/molecules/SearchBar";
+import Error from "@/components/ui/Error";
+import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import Grades from "@/components/pages/Grades";
+import Button from "@/components/atoms/Button";
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -91,8 +92,15 @@ const Courses = () => {
             Manage your academic courses and track your progress
           </p>
         </div>
-
-        <Button variant="primary" size="lg" className="gap-2">
+<Button 
+          variant="primary" 
+          size="lg" 
+          className="gap-2"
+          onClick={() => {
+            // TODO: Implement add course functionality
+            console.log('Add course clicked');
+          }}
+        >
           <ApperIcon name="Plus" className="w-5 h-5" />
           Add Course
         </Button>

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 
-const Layout = ({ onQuickAdd }) => {
+const Layout = ({ onQuickAdd, onAddCourse }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -28,7 +28,7 @@ const Layout = ({ onQuickAdd }) => {
       
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Header 
+<Header 
           onMenuClick={toggleMobileMenu}
           onQuickAdd={onQuickAdd}
         />

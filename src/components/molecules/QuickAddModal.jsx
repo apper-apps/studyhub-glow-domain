@@ -6,35 +6,53 @@ import FormField from "@/components/molecules/FormField";
 import { motion, AnimatePresence } from "framer-motion";
 
 const QuickAddModal = ({ isOpen, onClose, courses, onAdd, type = "assignment" }) => {
-  const [formData, setFormData] = useState({
-    title: "",
-    courseId: "",
-    dueDate: "",
-    priority: "medium",
-    description: ""
-  });
+  const getInitialFormData = () => {
+    if (type === "course") {
+      return {
+        name: "",
+        professor_c: "",
+        credits_c: "",
+        color_c: "#4f46e5",
+        semester_c: "",
+        schedule_c: "",
+        grade_categories_c: ""
+      };
+    }
+    return {
+      title: "",
+      courseId: "",
+      dueDate: "",
+      priority: "medium",
+      description: ""
+    };
+  };
 
-  const handleSubmit = async (e) => {
+  const [formData, setFormData] = useState(getInitialFormData());
+
+const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!formData.title || !formData.courseId || !formData.dueDate) {
-      toast.error("Please fill in all required fields");
-      return;
+    // Validation based on type
+    if (type === "course") {
+      if (!formData.name || !formData.professor_c || !formData.credits_c || !formData.semester_c) {
+        toast.error("Please fill in all required fields");
+        return;
+      }
+    } else {
+      if (!formData.title || !formData.courseId || !formData.dueDate) {
+        toast.error("Please fill in all required fields");
+        return;
+      }
     }
 
-    try {
-      await onAdd({
-        ...formData,
-        status: "pending"
-      });
+try {
+      const submitData = type === "course" 
+        ? formData 
+        : { ...formData, status: "pending" };
+        
+      await onAdd(submitData);
       
-      setFormData({
-        title: "",
-        courseId: "",
-        dueDate: "",
-        priority: "medium",
-        description: ""
-      });
+      setFormData(getInitialFormData());
       
       toast.success(`${type === "assignment" ? "Assignment" : "Task"} added successfully!`);
       onClose();
@@ -85,59 +103,127 @@ const QuickAddModal = ({ isOpen, onClose, courses, onAdd, type = "assignment" })
             </button>
           </div>
           
-          {/* Form */}
+{/* Form */}
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
-            <FormField
-              label="Title *"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              placeholder="Enter assignment title"
-            />
-            
-            <FormField
-              label="Course *"
-              type="select"
-              name="courseId"
-              value={formData.courseId}
-              onChange={handleChange}
-            >
-              <option value="">Select a course</option>
-              {courses.map(course => (
-                <option key={course.Id} value={course.Id}>
-                  {course.name}
-                </option>
-              ))}
-            </FormField>
-            
-            <FormField
-              label="Due Date *"
-              type="date"
-              name="dueDate"
-              value={formData.dueDate}
-              onChange={handleChange}
-            />
-            
-            <FormField
-              label="Priority"
-              type="select"
-              name="priority"
-              value={formData.priority}
-              onChange={handleChange}
-            >
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-            </FormField>
-            
-            <FormField
-              label="Description"
-              type="textarea"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              placeholder="Optional description"
-            />
+            {type === "course" ? (
+              <>
+                <FormField
+                  label="Course Name *"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter course name"
+                />
+                
+                <FormField
+                  label="Professor *"
+                  name="professor_c"
+                  value={formData.professor_c}
+                  onChange={handleChange}
+                  placeholder="Enter professor name"
+                />
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <FormField
+                    label="Credits *"
+                    type="number"
+                    name="credits_c"
+                    value={formData.credits_c}
+                    onChange={handleChange}
+                    placeholder="3"
+                    min="1"
+                    max="6"
+                  />
+                  
+                  <FormField
+                    label="Color"
+                    type="color"
+                    name="color_c"
+                    value={formData.color_c}
+                    onChange={handleChange}
+                  />
+                </div>
+                
+                <FormField
+                  label="Semester *"
+                  name="semester_c"
+                  value={formData.semester_c}
+                  onChange={handleChange}
+                  placeholder="Fall 2024"
+                />
+                
+                <FormField
+                  label="Schedule"
+                  type="textarea"
+                  name="schedule_c"
+                  value={formData.schedule_c}
+                  onChange={handleChange}
+                  placeholder="MWF 10:00-11:00 AM"
+                />
+                
+                <FormField
+                  label="Grade Categories"
+                  type="textarea"
+                  name="grade_categories_c"
+                  value={formData.grade_categories_c}
+                  onChange={handleChange}
+                  placeholder="Exams 40%, Homework 30%, Participation 30%"
+                />
+              </>
+            ) : (
+              <>
+                <FormField
+                  label="Title *"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
+                  placeholder="Enter assignment title"
+                />
+<FormField
+                  label="Course *"
+                  type="select"
+                  name="courseId"
+                  value={formData.courseId}
+                  onChange={handleChange}
+                >
+                  <option value="">Select a course</option>
+                  {courses.map(course => (
+                    <option key={course.Id} value={course.Id}>
+                      {course.name}
+                    </option>
+                  ))}
+                </FormField>
+                
+                <FormField
+                  label="Due Date *"
+                  type="date"
+                  name="dueDate"
+                  value={formData.dueDate}
+                  onChange={handleChange}
+                />
+                
+                <FormField
+                  label="Priority"
+                  type="select"
+                  name="priority"
+                  value={formData.priority}
+                  onChange={handleChange}
+                >
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </FormField>
+                
+                <FormField
+                  label="Description"
+                  type="textarea"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                  placeholder="Optional description"
+                />
+              </>
+            )}
             
             <div className="flex gap-3 pt-4">
               <Button
@@ -151,10 +237,10 @@ const QuickAddModal = ({ isOpen, onClose, courses, onAdd, type = "assignment" })
               <Button
                 type="submit"
                 variant="primary"
-                className="flex-1 gap-2"
+className="flex-1 gap-2"
               >
                 <ApperIcon name="Plus" className="w-4 h-4" />
-                Add {type === "assignment" ? "Assignment" : "Task"}
+                Add {type === "assignment" ? "Assignment" : type === "course" ? "Course" : "Task"}
               </Button>
             </div>
           </form>
