@@ -235,9 +235,9 @@ try {
                 Cancel
               </Button>
               <Button
-                type="submit"
+type="submit"
                 variant="primary"
-className="flex-1 gap-2"
+                className="flex-1 gap-2"
               >
                 <ApperIcon name="Plus" className="w-4 h-4" />
                 Add {type === "assignment" ? "Assignment" : type === "course" ? "Course" : "Task"}
